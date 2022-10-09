@@ -2,6 +2,21 @@
  
 This repository contains the project notes for the Software Engineering 101 course at the University of Applied Sciences Hamburg.  
 
+## **Team Roles**
+
+Unanimously agreed upon roles for the team members:
+
+| **Role** | **Team Member** |
+| :--- | ---: |
+| **Product Owner** | @Dennis |
+| **Scrum Master** | @Sebastian |
+| **Developer** | @Niko |
+| **Designer** | @Eddy |
+
+These merely discribe the roles of the team members, but do not necessarily reflect the actual workload of each team member, which is intended to end up roughly equal.
+
+Development of the project is done in a Scrum framework, with the our sprint planning listed on trello [here](https://trello.com/b/1Z7Z7Z7Z/software-engineering-101).
+
 ## **Project requirements**
 The project is intended to be devloped and documented by a team of 4 students, displaying core concepts of the Software Engineering Process.  
 These include but are not limited to:  
@@ -10,14 +25,7 @@ These include but are not limited to:
 3. Software Design (Planning the development process based on established operational frameworks)
 4. Software Development (Implementing the software based on the principle of test driven development and established design patterns)
 
-
-## **Project Notes**
-
-
-### **1. Idea / Concept** 
-  - Expense Tracker App
-
-### **2. Key Requirements** 
+### **App requirements** 
   - based on concept (User / Customer Stories) 
   - application responds quickly
   - application is easy to use / available on multiple platforms
@@ -28,44 +36,21 @@ These include but are not limited to:
     - weekly / monthly / ... overview of expenses | summary 
     - categorization / tagging / filtering 
 
-### **3. Key application components**
-  - GUI / Frontend (Web / Mobile)
-  - DB / Persistent storage
-  - User Authentication
 
-### **4. Techstack**
-  - #### 4.1 Tools
-    Potential tools are in no particular order and still need to be evaluated:
+## **Tool Stack**
 
-    | **Purpose** | **Options** |  |  |  |  |  |
-    | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
-    | **Versioning** | Github | Gitlab | Bitbucket |
-    | **Hosting** | HeroKu | GitPages | DigitalOcean | AWS | Azure | Google |
-    | **Design** | Adobe XD |  Figma |
-    | **Containers** | Docker | Codespaces |
-  - #### 4.2 App components
-    Frameworks and libraries are in no particular order and still need to be evaluated:
+Tools we decided to use for development of the application
 
-    | **Purpose** | **Options** |  |  |  |  |
-    | :--- | ---: | ---: | ---: | ---: | ---: |
-    | **Runtime** | Node.js | Deno | Bun |
-    | **Framework** | Svelte  | qwik | Next.js | React | Vue |
-    | **CSS** | Tailwind | Bootstrap | Material | Plain! |
-    | **Auth** | Auth0 | Next-Auth | Passport | Azure | Google |
-    | **Database**| By Host |
-
-### **5. Operational and organizational tools**
-  - #### 5.1 Project Management  
-    - Agile / Scrum
-    - Potential Platforms: 
-      - Trello 
-      - Git Kanban 
-      - Monday
-      - ...
-  - #### 5.2 Communication
-    - Continious Exchange and regular Standups
-    - Potential Tools: 
-      - Whatsapp 
-      - Teams 
-      - Discord 
-      - Slack
+| **Purpose** | **Tool** | **Link** | **Notes** |
+| :--- | ---: | ---: | ---: |
+| **Versioning** | Github | here | |
+| **Hosting** | Firebase | | |
+| **Database**| Firebase | | |
+| **Runtime** | Node | [Nodejs](https://nodejs.org/en/)| bun isn't stable enough|
+| **Auth** | Firebase | [Firebase](https://firebase.google.com/docs/auth) | |
+| **Framework** | Next.js | [Tailwind.css](https://nextjs.org/) | |
+| **CSS** | Tailwind | [Link](https://tailwindcss.com/) | potentially changed |
+| **Containers** | Codespaces | used within githiub | |
+| **Design** | Figma | linktofigma | |
+| **Project Management** | Trello? | [Trello](https://trello.com/b/1Z7Z7Z7Zsoftware-engineering-101) | |
+| **Communication** | Discord | private | |
