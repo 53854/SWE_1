@@ -43,9 +43,9 @@ Tools we decided to use for development of the application
 
 | **Purpose** | **Tool** | **Link** | **Notes** |
 | :--- | ---: | ---: | ---: |
-| **Versioning** | Github | here | |
-| **Hosting** | Firebase | | |
-| **Database**| Firebase | | |
+| **Versioning** | Github | [This Repo](https://github.com/53854/SWE_1) | |
+| **Hosting** | Firebase | [Google Firebase](https://firebase.google.com/) | azure was too complex for small projects |
+| **Database**| Firebase | [Google Firebase](https://firebase.google.com/) | using firestore |
 | **Runtime** | Node | [Nodejs](https://nodejs.org/en/)| bun isn't stable enough|
 | **Auth** | Firebase | [Firebase](https://firebase.google.com/docs/auth) | |
 | **Framework** | Next.js | [Tailwind.css](https://nextjs.org/) | |
