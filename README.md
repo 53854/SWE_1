@@ -26,9 +26,9 @@ These include but are not limited to:
 4. Software Development (Implementing the software based on the principle of test driven development and established design patterns)
 
 ### **App requirements** 
-  - based on concept (User / Customer Stories) 
   - application responds quickly
-  - application is easy to use / available on multiple platforms
+  - application is easy to use
+  - available on multiple platforms
   - Users can track their expenses
     - add, modify and delete expenses and income
     - define periodicity of recurring expenses and income
