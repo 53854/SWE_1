@@ -52,5 +52,5 @@ Tools we decided to use for development of the application
 | **CSS** | Tailwind | [Link](https://tailwindcss.com/) | potentially changed |
 | **Containers** | Codespaces | used within githiub | |
 | **Design** | Figma | linktofigma | |
-| **Project Management** | Trello? | [Trello](https://trello.com/b/1Z7Z7Z7Zsoftware-engineering-101) | |
+| **Project Management** | Trello? | [Trello](https://trello.com/b/1Z7Z7Z7Zsoftware-engineering-101) | Github Projects? |
 | **Communication** | Discord | private | |
