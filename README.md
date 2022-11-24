@@ -26,9 +26,9 @@ These include but are not limited to:
 4. Software Development (Implementing the software based on the principle of test driven development and established design patterns)
 
 ### **App requirements** 
-  - based on concept (User / Customer Stories) 
   - application responds quickly
-  - application is easy to use / available on multiple platforms
+  - application is easy to use
+  - available on multiple platforms
   - Users can track their expenses
     - add, modify and delete expenses and income
     - define periodicity of recurring expenses and income
@@ -52,5 +52,5 @@ Tools we decided to use for development of the application
 | **CSS** | Tailwind | [Link](https://tailwindcss.com/) | potentially changed |
 | **Containers** | Codespaces | used within githiub | |
 | **Design** | Figma | linktofigma | |
-| **Project Management** | Trello? | [Trello](https://trello.com/b/1Z7Z7Z7Zsoftware-engineering-101) | |
+| **Project Management** | Trello? | [Trello](https://trello.com/b/1Z7Z7Z7Zsoftware-engineering-101) | Github Projects? |
 | **Communication** | Discord | private | |
