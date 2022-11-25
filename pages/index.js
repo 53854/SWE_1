@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import { firestore, fromMillis, expenseToJSON} from '../lib/firebase'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Loader from '../components/Loader';
 import ExpenseFeed from '../components/ExpenseFeed';
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home(props) {
-  const [expenses, setExpenses] = useState(props.expenses);
+  const [expenses, setExpenses] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [expensesEnd, setExpensesEnd] = useState(false);
@@ -55,6 +55,10 @@ export default function Home(props) {
       setExpensesEnd(true);
     }
   }
+
+  useEffect(() => {
+    setExpenses(props.expenses);
+  }, [props.expenses]);
 
   return (
     <main>
