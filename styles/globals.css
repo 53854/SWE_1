@@ -246,3 +246,10 @@ button.btn-logo {
 }
 
 .hidden { display:  none; }
+
+/* 
+tailwind directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+*/

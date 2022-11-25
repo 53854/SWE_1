@@ -22,9 +22,8 @@ export async function getServerSideProps({ query }) {
         user = userDoc.data();
         const expensesQuery = userDoc.ref
             .collection('expenses')
-            .where('published', '==', true)
             .orderBy('createdAt', 'desc')
-            .limit(5);
+            /* .limit(5) */;
 
         expenses = (await expensesQuery.get()).docs.map(expenseToJSON);
     }
