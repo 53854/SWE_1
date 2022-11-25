@@ -51,8 +51,8 @@ function ExpenseManager() {
             <button onClick={() => setPreview(!preview)}>
               {preview ? "Edit" : "Preview"}
             </button>
-            <Link href={`/${expense.username}/${expense.slug}`}>
-              <button className="btn-blue">Live view</button>
+            <Link href={`/admin`}>
+              <button className="btn-blue">See all expenses</button>
             </Link>
             <DeleteExpenseButton expenseRef={expenseRef} />
           </aside>
@@ -71,16 +71,15 @@ function ExpenseForm({ defaultValues, expenseRef, preview }) {
 
   const router = useRouter();
 
-  const updateExpense = async ({ content, monthly, published }) => {
+  const updateExpense = async ({ content, monthly }) => {
 
     await expenseRef.update({
       content,
       monthly,
-      published,
       updatedAt: serverTimestamp(),
     });
 
-    reset({ content, monthly, published });
+    reset({ content, monthly });
     router.push("/admin");
     toast.success("Expense updated successfully!");
   };
@@ -110,12 +109,6 @@ function ExpenseForm({ defaultValues, expenseRef, preview }) {
           />
           <label>Monthly</label>
           <br></br>
-          <input
-            className={styles.checkbox}
-            type="checkbox"
-            {...register("published")}
-          />
-          <label>Published</label>
         </fieldset>
 
         <button type="submit" className="btn-green" disabled={!isDirty || !isValid} href="/admin">
