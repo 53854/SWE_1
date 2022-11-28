@@ -15,7 +15,7 @@ Unanimously agreed upon roles for the team members:
 
 These merely discribe the roles of the team members, but do not necessarily reflect the actual workload of each team member, which is intended to end up roughly equal.
 
-Development of the project is done in a Scrum framework, with the our sprint planning listed on trello [here](https://trello.com/b/1Z7Z7Z7Z/software-engineering-101).
+We're working in a somewhat soft-scrum environment, for which our Planning and kanban board are located in this [GitHub Project](https://github.com/users/53854/projects/5)
 
 ## **Project requirements**
 The project is intended to be devloped and documented by a team of 4 students, displaying core concepts of the Software Engineering Process.  
@@ -52,5 +52,5 @@ Tools we decided to use for development of the application
 | **CSS** | Tailwind | [Link](https://tailwindcss.com/) | potentially changed |
 | **Containers** | Codespaces | used within githiub | |
 | **Design** | Figma | linktofigma | |
-| **Project Management** | Trello? | [Trello](https://trello.com/b/1Z7Z7Z7Zsoftware-engineering-101) | Github Projects? |
+| **Project Management** | Git Projects | [GitHub Project](https://github.com/users/53854/projects/5) | Trello was overkill |
 | **Communication** | Discord | private | |

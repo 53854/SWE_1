@@ -1,6 +1,7 @@
 import Loader from "../components/Loader";
 import { auth, firestore, googleAuthProvider } from "../lib/firebase";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState, useMemo } from "react";
+
 import { UserContext } from "../lib/context";
 import debounce from "lodash.debounce";
 
@@ -34,7 +35,8 @@ function SignInButton() {
   return (
     <>
       <button className="btn-google" onClick={signInWithGoogle}>
-        <img src={"/google.png"} /> Sign in with Google
+        <img src={"google.png"} alt="google" />
+        Sign in with Google
       </button>
       <button onClick={() => auth.signInAnonymously()}>
         Sign in Anonymously
@@ -55,9 +57,21 @@ function UsernameForm() {
 
   const { user, username } = useContext(UserContext);
 
-  useEffect(() => {
-    checkUsername(formValue);
-  }, [formValue]);
+  // Hit the database for username match after each debounced change
+  // useCallBack is required for debounce to work
+  const checkUsername = useMemo(
+    () =>
+      debounce(async (username) => {
+        if (username.length >= 3) {
+          const ref = firestore.doc(`usernames/${username}`);
+          const { exists } = await ref.get();
+          console.log("Firestore read executed!");
+          setIsValid(!exists);
+          setLoading(false);
+        }
+      }, 500),
+    []
+  );
 
   const onChange = (e) => {
     // Force form value typed in form to match correct format
@@ -80,22 +94,7 @@ function UsernameForm() {
 
   useEffect(() => {
     checkUsername(formValue);
-  }, [formValue]);
-
-  // Hit the database for username match after each debounced change
-  // useCallBack is required for debounce to work
-  const checkUsername = useCallback(
-    debounce(async (username) => {
-      if (username.length >= 3) {
-        const ref = firestore.doc(`usernames/${username}`);
-        const { exists } = await ref.get();
-        console.log("Firestore read executed!");
-        setIsValid(!exists);
-        setLoading(false);
-      }
-    }, 500),
-    []
-  );
+  }, [formValue, checkUsername]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
