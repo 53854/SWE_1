@@ -48,11 +48,8 @@ function ExpenseManager() {
 
           <aside>
             <h3>Tools</h3>
-            <button onClick={() => setPreview(!preview)}>
-              {preview ? "Edit" : "Preview"}
-            </button>
             <Link href={`/admin`}>
-              <button className="btn-blue">See all expenses</button>
+            <button className="btn-blue">See all expenses</button>
             </Link>
             <DeleteExpenseButton expenseRef={expenseRef} />
           </aside>
@@ -91,8 +88,8 @@ function ExpenseForm({ defaultValues, expenseRef, preview }) {
       <div className={preview ? styles.hidden : styles.controls}>
         <label>Expense Value in €</label>
         <input
-          type="number"
           id="content"
+          type="number"
           step="0.01"
           {...register("content")}
         />
