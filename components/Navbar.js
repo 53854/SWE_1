@@ -30,7 +30,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/admin">
-                <button className="btn-blue">Create Expenses</button>
+                <button className="btn-blue">Manage Expenses</button>
               </Link>
             </li>
             <li>

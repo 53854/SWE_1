@@ -2,10 +2,16 @@ import Loader from "../components/Loader";
 import { auth, firestore, googleAuthProvider } from "../lib/firebase";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { UserContext } from "../lib/context";
+import { useRouter } from "next/router";
 import debounce from "lodash.debounce";
 
 export default function Enter(props) {
+  const router = useRouter();
   const { user, username } = useContext(UserContext);
+
+  if(username) {
+    router.push("/admin");
+  }
 
   // 1. user signed out <SignInButton />
   // 2. user signed in, but missing username <UsernameForm />
@@ -49,6 +55,8 @@ function SignOutButton() {
 }
 
 function UsernameForm() {
+  const router = useRouter();
+
   const [formValue, setFormValue] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -114,6 +122,8 @@ function UsernameForm() {
     batch.set(usernameDoc, { uid: user.uid });
 
     await batch.commit();
+
+    router.push("/admin");
   };
 
   return (

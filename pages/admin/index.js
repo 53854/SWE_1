@@ -65,7 +65,6 @@ function CreateNewExpense() {
       username,
       content: 0,
       monthly: false,
-      published: false,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     };
