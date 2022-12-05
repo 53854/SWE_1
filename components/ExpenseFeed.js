@@ -10,7 +10,10 @@ export default function ExpenseFeed({ expenses, admin }) {
 }
 
 function ExpenseItem({ expense, admin = false }) {
+  const createdAt = typeof expense?.createdAt === 'number' ? new Date(expense.createdAt) : expense.createdAt.toDate();
+
   return (
+
 
 
     
@@ -28,6 +31,9 @@ function ExpenseItem({ expense, admin = false }) {
 
       <footer class="ml-auto pt-1 text-xl">
         <span>{expense?.content}€</span>
+        {createdAt.toLocaleDateString()}
+
+
       </footer>
 
 
