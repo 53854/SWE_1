@@ -29,27 +29,39 @@ export async function getServerSideProps({ query }) {
         expenses = (await expensesQuery.get()).docs.map(expenseToJSON);
     }
 
-    return {
+    return {        
         props: { user, expenses }, // will be passed to the page component as props
     };
 }
 
-function SummaryChart() {
+function SummaryChart({ expenses }) {
+    let expenseValue = 0;
+    let budget = 1500;
+
+    for (let i = 0; i < expenses.length; i++) {
+        const element = Number(expenses[i].content);
+        expenseValue += element;     
+    }
+
+    let budgetLeft = Math.round((budget - expenseValue) * 100) / 100;
 
     return (
         <PieChart
-            data={[{ value: 1254, color: '#3B49DF' }]}
-            viewBoxSize={[4, 2]}
-            center={[2, 1]}
-            radius={0.8}
-            lengthAngle={-360}
+            data={[{ value: budgetLeft, color: '#3B49DF' }]}
+            viewBoxSize={[5, 2.5]}
+            center={[2.5, 1.25]}
+            background="#b5bdc4"
+            radius={1.25}
+            startAngle={105}
+            lengthAngle={330}
             rounded={true}
             animate={true}
-            totalValue={1500}
+            animationDuration={750}
+            totalValue={budget}
             lineWidth={20}
             label={({ dataEntry }) => dataEntry.value + "€"}
             labelStyle={{
-                fontSize:'0.35px',
+                fontSize:'0.4px',
                 fontFamily: 'Noto Sans',
                 fill: '#3B49DF',
             }}
@@ -62,7 +74,7 @@ export default function UserProfilePage({ user, expenses }) {
     return (
         <main>
             <UserProfile user={user} />
-            <SummaryChart />
+            <SummaryChart expenses={expenses} />
             <ExpenseFeed expenses={expenses} />
         </main>
     );
