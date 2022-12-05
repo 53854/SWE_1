@@ -1,18 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+
 
 :root {
-  --color-bg: #eef0f1;
-  --color-text: #08090a;
+  --color-bg: #1F1F1F;
+  --color-text: white;
   --color-blue: #3b49df;
-  --color-red: #df3b3b;
-  --color-green: #3bdf72;
+  --color-red: #F40000;
+  --color-green: #05F400;
   --color-gray: #b5bdc4;
 }
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   margin-top: 50px;
@@ -57,6 +62,22 @@ code {
   overflow-x: scroll;
 }
 
+/* shapes */ 
+
+.circle {
+  height: 60px;
+  width: 60px;
+  background-color: #D9D9D9;
+  opacity: 14%;
+  border-radius:10%;
+  margin-right: 40px;
+}
+
+/* Icons */
+.material-icons.md-48 { font-size: 96px; }
+
+
+
 
 /* Loader */
 .loader {
@@ -74,7 +95,7 @@ code {
 }
 
 /* Navbar */
-
+/*
 .navbar {
   height: 70px;
   width: 100%;
@@ -87,6 +108,7 @@ code {
   border-bottom: 1px solid var(--color-gray);
   z-index: 99;
 }
+*/
 
 .navbar ul {
   list-style-type: none;
@@ -181,15 +203,16 @@ button.btn-logo {
 
 
 /* Cards */
-
+/*
 .card {
   padding: 1rem;
   margin: 1rem 0;
   background-color: white;
+  color: black;
   border: 1px solid var(--color-gray);
   border-radius: 8px;
 }
-
+*/
 .card footer {
   display: flex;
 }
