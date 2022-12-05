@@ -39,12 +39,6 @@ function ExpenseItem({ expense, admin = false }) {
               <button className="btn-blue">Edit</button>
             </h3>
           </Link>
-
-          {expense.published ? (
-            <p className="text-success">Live</p>
-          ) : (
-            <p className="text-danger">Unpublished</p>
-          )}
         </>
       )}
     </div>
