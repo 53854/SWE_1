@@ -19,15 +19,14 @@ export default function Navbar() {
 
   return (
 
-    <><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" /><nav className="fixed h-32 w-full inset-x-0 bottom-0">
 
 
-
-      <ul class="flex flex-row justify-between py-2 bg-[#1F1F1F]">
+    <div class="block absolute inset-x-0 bottom-0 h-32 bg-gradient-to-bl from-[#1F1F1F] via-[#1F1F1F] to-[#b938d958]">
+      <ul class="flex flex-row justify-between static mt-6">
       
-        <li class="flex px-16 py-2">
+        <li class="flex px-12 py-1 ">
           <Link href="/">
-            <Image src="/home-2.png" width={50} height={50}/>
+            <Image src="/home-2.png" width={90} height={90}/>
           </Link>
         </li>
 
@@ -40,17 +39,17 @@ export default function Navbar() {
             </li>
         */}
 
-            <li class="flex">
+            <li class="flex py-1">
               <Link href="/admin">
              {/* <span class="material-symbols-outlined">add_circle</span> */}
-              <Image src="/add-6.png" width={70} height={70}/>
+              <Image src="/add-6.png" width={90} height={90}/>
               
               
               </Link>
             </li>
-            <li class="flex px-16 py-2">
+            <li class="flex px-12 py-1">
               <Link href={`/${username}`}>
-              <Image src="/application.png" width={50} height={50}/>
+              <Image src="/application.png" width={90} height={90}/>
               </Link>
             </li>
           </>
@@ -65,6 +64,7 @@ export default function Navbar() {
           </li>
         )}
       </ul>
-    </nav></>
+      </div>
+
   );
 }

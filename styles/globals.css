@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@100;200;300;400&display=swap');
 
 
 :root {
@@ -19,8 +19,9 @@ body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
   background-color: var(--color-bg);
+  
   color: var(--color-text);
-  margin-top: 50px;
+
 }
 
 main {
@@ -67,8 +68,7 @@ code {
 .circle {
   height: 60px;
   width: 60px;
-  background-color: #D9D9D9;
-  opacity: 14%;
+  background-color: #606060;
   border-radius:10%;
   margin-right: 40px;
 }
@@ -76,7 +76,9 @@ code {
 /* Icons */
 .material-icons.md-48 { font-size: 96px; }
 
-
+.labelStyle {
+  background-color: #606060;
+}
 
 
 /* Loader */
@@ -95,21 +97,13 @@ code {
 }
 
 /* Navbar */
-/*
-.navbar {
-  height: 70px;
-  width: 100%;
-  background: white;
-  color: var(--colors-text);
-  position: fixed;
-  top: 0;
-  padding: 0 10vw;
-  font-weight: bold;
-  border-bottom: 1px solid var(--color-gray);
-  z-index: 99;
-}
-*/
 
+.navbar {
+  background: rgb(31,31,31);
+  background: linear-gradient(186deg, rgba(31,31,31,1) 66%, rgba(185,56,217,0.7931547619047619) 100%);
+}
+
+/*
 .navbar ul {
   list-style-type: none;
   margin: 0;
@@ -119,17 +113,10 @@ code {
   justify-content: space-between;
   height: 100%;
 }
+*/
 
-.navbar img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
 
-.navbar li {
-  border-radius: 50%;
-}
+
 
 /* Buttons */
 

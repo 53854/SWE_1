@@ -20,6 +20,8 @@ export default function Home(props) {
       <h2>Landing Page Placeholder</h2>
       <h1>Finanzen sind magisch oder so</h1>
 
+      
+
       {username && (
           <p>
             <button href="/" onClick={signOut}>SignOut</button>
