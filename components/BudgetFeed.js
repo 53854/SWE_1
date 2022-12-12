@@ -1,10 +1,19 @@
-export default function BudgetFeed() {
+import { useState } from "react";
+
+const RangeSlider = () => {
+
+    const [rangeval, setRangeval] = useState(null);
+    
+    // hardcoded budget -> Anschluss and DB, pls don't hate me I am tired
     return (
-        // hardcoded budget -> Anschluss and DB, pls don't hate me I am tired
-        <div className="card">
-            <label for="budget">Food & Drinks</label><br/>
-            <label for="budget">€600 / month</label><br/>
-            <meter id="budget" value="200" min="0" max="600"></meter><br/>
-        </div>
+      <div className="card">
+        <label htmlFor="budget-range">Savings</label><br/>
+        <label htmlFor="budget-range">600€/monthly</label>
+        <input id="budget-range" type="range" className="budget-range" min="0" max="1500" 
+         onChange={(event) => setRangeval(event.target.value)} />
+        <h5>{rangeval}€</h5>
+      </div>
     );
-}
+  };
+  
+  export default RangeSlider;

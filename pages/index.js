@@ -20,8 +20,7 @@ export default function Home(props) {
     <main>
       
       {username && ( // ich hab hydration noch nicht komplett durchblickt bzw. was die fehlermeldung von mir wollen
-          <div>
-            
+          <div>        
             Budget Limits
             <BudgetFeed />
           </div>
