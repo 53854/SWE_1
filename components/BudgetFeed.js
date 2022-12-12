@@ -1,4 +1,4 @@
-export default function UserProfile({ user }) {
+export default function BudgetFeed() {
     return (
         // hardcoded budget -> Anschluss and DB, pls don't hate me I am tired
         <div className="card">
