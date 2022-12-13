@@ -73,6 +73,38 @@ code {
   margin-right: 40px;
 }
 
+.circle2 {
+  height: 150px;
+  width: 150px;
+  background: rgb(31,31,31);
+background: -moz-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.2) 60%);
+background: -webkit-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.2) 40%);
+background: linear-gradient(56deg, rgba(31,31,31,0) 30%, rgba(179, 33, 215, 0.2) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f1f1f",endColorstr="#b321d7",GradientType=1);
+  border-radius:100%;
+  position: absolute;
+  top: 6px;
+  right: -10px;
+
+}
+
+.circle3 {
+  height: 80px;
+  width: 80px;
+  background: rgb(31,31,31);
+background: -moz-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.1) 60%);
+background: -webkit-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.1) 40%);
+background: linear-gradient(5deg, rgba(31,31,31,0) 30%, rgba(179, 33, 215, 0.1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f1f1f",endColorstr="#b321d7",GradientType=1);
+  border-radius:100%;
+  position: absolute;
+  top: 70px;
+  left: -10px;
+
+}
+
+
+
 /* Icons */
 .material-icons.md-48 { font-size: 96px; }
 

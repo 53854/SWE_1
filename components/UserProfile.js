@@ -7,7 +7,7 @@ export default function UserProfile({ user }) {
         <div className="tracking-tight">
                             <Image class="float-right mt-6" src="/pie-graph-4.png" width={55} height={55}/>
 
-            <div class="pt-6 font-thin text-xl">
+            <div class="pt-6 font-thin text-lg">
                 Summary
             </div>
 
