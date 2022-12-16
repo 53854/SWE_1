@@ -22,7 +22,8 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-markdown": "^8.0.3",
-    "react-minimal-pie-chart": "^8.4.0"
+    "react-minimal-pie-chart": "^8.4.0",
+    "reactjs-popup": "^2.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

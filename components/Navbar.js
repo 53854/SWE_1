@@ -26,7 +26,7 @@ export default function Navbar() {
       
         <li class="flex px-12 py-1 ">
           <Link href="/">
-            <Image src="/home-2.png" width={90} height={90}/>
+            <Image alt="" src="/home-2.png" width={90} height={90}/>
           </Link>
         </li>
 
@@ -42,14 +42,14 @@ export default function Navbar() {
             <li class="flex py-1">
               <Link href="/admin">
              {/* <span class="material-symbols-outlined">add_circle</span> */}
-              <Image src="/add-6.png" width={90} height={90}/>
+              <Image alt="" src="/add-6.png" width={90} height={90}/>
               
               
               </Link>
             </li>
             <li class="flex px-12 py-1">
               <Link href={`/${username}`}>
-              <Image src="/application.png" width={90} height={90}/>
+              <Image alt="" src="/application.png" width={90} height={90}/>
               </Link>
             </li>
           </>

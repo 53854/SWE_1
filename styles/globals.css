@@ -92,10 +92,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f1f1f",endCo
   height: 80px;
   width: 80px;
   background: rgb(31,31,31);
-background: -moz-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.1) 60%);
-background: -webkit-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.1) 40%);
-background: linear-gradient(5deg, rgba(31,31,31,0) 30%, rgba(179, 33, 215, 0.1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f1f1f",endColorstr="#b321d7",GradientType=1);
+  background: -moz-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.1) 60%);
+  background: -webkit-linear-gradient(56deg, rgba(31,31,31,0) 31%, rgba(179, 33, 215, 0.1) 40%);
+  background: linear-gradient(5deg, rgba(31,31,31,0) 30%, rgba(179, 33, 215, 0.1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f1f1f",endColorstr="#b321d7",GradientType=1);
   border-radius:100%;
   position: absolute;
   top: 70px;
@@ -248,6 +248,119 @@ button.btn-logo {
   color: white;
   background: var(--color-blue);
 }
+
+/* Particle button */
+
+.shape {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: scale(0.8);
+}
+.cir {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background: #333;
+  text-align: center;
+  z-index: 10;
+  transition: 0.2s;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0px 1px 5px 2px #BFCEEF;
+}
+.btn:active, .btn:hover, .btn:focus {
+  outline: none !important;
+  color: white;
+} 
+.btn-particles {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  color: #eee;
+  font-family: monospace;
+  z-index: 5;
+/*  filter: url(#gooeyness); */
+}
+.btn:active {
+  transform: scale(0.9) translate(-55%, -55%);
+}
+
+
+/* Popup */
+
+.popup-content {
+  margin: auto;
+  background: #2F2E2E;
+  height: 400px;
+  width: 85%;
+  padding: 5px;
+  border-radius: 70px;
+}
+.popup-arrow {
+  color: rgb(171, 34, 34);
+}
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(15, 2, 17, 0.502);
+}
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+}
+
+.modal {
+  font-size: 12px;
+  
+  
+  
+  
+}
+.modal > .header {
+  width: 100%;
+  
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -15px;
+  font-size: 24px;
+  background: #6a0202;
+  border-radius: 18px;
+  
+}
+
+
+
 
 
 /* Utilities */
