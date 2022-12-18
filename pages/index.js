@@ -1,12 +1,13 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Script from 'next/script';
 import Link from 'next/link';
 import BudgetFeed from '../components/BudgetFeed';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { UserContext } from '../lib/context';
-import { auth, firestore, fromMillis, expenseToJSON} from '../lib/firebase'
+import { auth, firestore, fromMillis, expenseToJSON } from '../lib/firebase'
 import { useState, useEffect } from 'react';
+import Popup from 'reactjs-popup';
 
 export default function Home(props) {
   const { user, username } = useContext(UserContext)
@@ -16,13 +17,14 @@ export default function Home(props) {
     auth.signOut();
   }
 
-  return (   
-    <main>
-      
-      {username && ( // ich hab hydration noch nicht komplett durchblickt bzw. was die fehlermeldung von mir wollen
-          <div>        
+  return (
+    <>
+      <main>
+        {username && ( // ich hab hydration noch nicht komplett durchblickt bzw. was die fehlermeldung von mir wollen
+          <div>
             Budget Limits
             <BudgetFeed />
+            <BudgetPopup />
           </div>
         )}
 
@@ -36,6 +38,62 @@ export default function Home(props) {
             </Link>
           </div>
         )}
-    </main>
+      </main>
+    </>
+
+  );
+}
+
+
+function BudgetPopup() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [rangeval, setRangeval] = useState(null);
+
+  return (
+    <>
+      <Popup
+        trigger={<button className="button"> Add Budget </button>}
+        modal
+        nested
+      >
+        {close => (
+          <div className="modal">
+            <button className="close" onClick={close}>
+              &times;
+            </button>
+            <div className="header"> Budget </div>
+            <div className="content">
+              {' '}
+              <button onClick={() => setIsVisible(!isVisible)} style={{ display: !isVisible ? 'block' : 'none' }}>Savings?</button>
+
+              <div style={{ display: isVisible ? 'block' : 'none' }}>
+                <h2>Savings</h2>
+                <form>
+                  <input id="budget-range" type="range" className="budget-range" min="0" max="100"
+                    onChange={(event) => setRangeval(event.target.value)} />
+                  <strong>{rangeval}%</strong>
+
+                  <button type="submit" className="btn-green">
+                    Create New Budget
+                  </button>
+                </form>
+
+              </div>
+            </div>
+            <div className="actions">
+              <button
+                className="button"
+                onClick={() => {
+                  close();
+                  setIsVisible(false);
+                }}
+              >
+                Close Popup
+              </button>
+            </div>
+          </div>
+        )}
+      </Popup>
+    </>
   );
 }
