@@ -51,9 +51,9 @@ function SummaryChart({ expenses }) {
 
     return (
 
-        <PieChart
+        <PieChart class="piechart"
             data={[{ value: budgetLeft, color: 'rgba(185,56,217,0.7931547619047619)' }]}
-
+            segmentsStyle={'/styles/globals.css'}
             viewBoxSize={[5, 2.5]}
             center={[2.5, 1.25]}
             background="#b5bdc4"

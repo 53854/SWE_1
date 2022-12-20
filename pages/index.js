@@ -32,7 +32,7 @@ function BudgetPopup() {
        </div>
     
        <div class="btn-particles">
-  </div>
+        </div>
   
  
    

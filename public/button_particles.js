@@ -37,7 +37,7 @@ $.fn.boom = function(e) {
         'fill': colors[randBG]
       });
   
-      btn.siblings('.particles-button').append(shape);
+      btn.siblings('.btn-particles').append(shape);
   
       group.push({shape: shape, x: x, y: y});
     }
