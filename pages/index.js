@@ -8,6 +8,7 @@ import { UserContext } from '../lib/context';
 import { auth, firestore, fromMillis, expenseToJSON } from '../lib/firebase'
 import { useState, useEffect } from 'react';
 import Popup from 'reactjs-popup';
+import Image from 'next/image'; 
 
 export default function Home(props) {
   const { user, username } = useContext(UserContext)
@@ -21,11 +22,25 @@ export default function Home(props) {
     <>
       <main>
         {username && ( // ich hab hydration noch nicht komplett durchblickt bzw. was die fehlermeldung von mir wollen
-          <div>
-            Budget Limits
-            <BudgetFeed />
-            <BudgetPopup />
-          </div>
+       
+          <div class="relative">
+           <Image alt="" class="mx-auto z-10 pt-10" src="/essential.png" width={90} height={90}/>
+           
+          <div className="circle2"></div>
+          <div className="circle3"></div>
+
+           <div class="text-center z-10 text-xl font-thin pt-3 mr-2 tracking-tighter">€ 3.200</div>
+           <div class="text-xs z-10 text-center text-neutral-300 pt-1 ml-auto">Budget Limit for</div>
+           <div class="text-xs z-10 text-center leading-tight text-neutral-300 pt-1 ml-auto">Dec 2022</div>
+           <BudgetPopup/>
+           </div>
+
+        
+
+          
+           // <BudgetFeed />
+          
+          
         )}
 
         {/* user is not signed OR has not created username */}
@@ -52,7 +67,8 @@ function BudgetPopup() {
   return (
     <>
       <Popup
-        trigger={<button className="button"> Add Budget </button>}
+            trigger={ <Image alt="" class="mx-auto pt-10 z-10" src="/add-6.png" width={60} height={60}/>
+          }
         modal
         nested
       >
@@ -61,35 +77,36 @@ function BudgetPopup() {
             <button className="close" onClick={close}>
               &times;
             </button>
-            <div className="header"> Budget </div>
+
+
             <div className="content">
               {' '}
-              <button onClick={() => setIsVisible(!isVisible)} style={{ display: !isVisible ? 'block' : 'none' }}>Savings?</button>
+              <Image alt="" class="saturate-0 hover-100 py-12 m-auto" onClick={() => setIsVisible(!isVisible)} style={{ display: !isVisible ? 'block' : 'none' }} src="/coin.png" width={90} height={90}/>
+
+
+
+
 
               <div style={{ display: isVisible ? 'block' : 'none' }}>
-                <h2>Savings</h2>
+              <Image alt="" class="pt-8 mx-auto" src="/coin.png" width={90} height={90}/>
+                <div class="text-center z-10  text-base font-thin mr-2 tracking-tighter">Savings</div>
+                <div class="text-center text-xs pt-1 pb-8">percentage of your budget </div>
                 <form>
+                  
                   <input id="budget-range" type="range" className="budget-range" min="0" max="100"
                     onChange={(event) => setRangeval(event.target.value)} />
-                  <strong>{rangeval}%</strong>
+                  <strong class="mx-60 text-lg font-thin">{rangeval}%</strong>
+                  <button class ="mx-auto py-6 animate-pulse" type="submit">
+                    <Image alt="" class="" src="/checked.png" width={40} height={40}/>
 
-                  <button type="submit" className="btn-green">
-                    Create New Budget
                   </button>
+            
                 </form>
 
               </div>
             </div>
             <div className="actions">
-              <button
-                className="button"
-                onClick={() => {
-                  close();
-                  setIsVisible(false);
-                }}
-              >
-                Close Popup
-              </button>
+
             </div>
           </div>
         )}
