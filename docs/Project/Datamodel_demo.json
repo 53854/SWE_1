@@ -1,0 +1,57 @@
+{
+  "Users": [
+    {
+      "USER_ID": {
+        "name": "John Smith",
+        "id" : "USER_ID",
+        "email": "john@example.com",
+        "current_budget": "budgets/<BUDGET_ID>",
+        "balance": 1000.0,
+        "regular_income": 1000.0,
+        "regular_expense": 0.0,
+        "member_since": "2022-12-22T12:34:56.789Z"
+      }
+    }
+  ],
+  "Transactions": [
+    {
+      "TRANSACTION_ID": {
+        "name": "Edeka XY sagt Danke",
+        "amount": 100.5,
+        "id" : "TRANSACTION_ID",
+        "description": "Grocery shopping",
+        "date": "2022-12-22T12:34:56.789Z",
+        "is_expense": true,
+        "user": "users/<USER_ID>",
+        "category": "categories/<CATEGORY_ID>",
+        "budget": "budgets/<BUDGET_ID>",
+        "reocurring": true,
+        "next_occurrence": "2022-01-22T12:34:56.789Z"
+      }
+    }
+  ],
+  "Categories": [
+    {
+      "CATEGORY_ID": {
+        "name": "Groceries",
+        "id" : "CATEGORY_ID",
+        "description": "Expenses related to grocery shopping",
+        "icon": "🛍️",
+        "user": "users/<USER_ID>"
+      }
+    }
+  ],
+  "Budgets": [
+    {
+      "BUDGET_ID": {
+        "name": "Monthly budget",
+        "id" : "BUDGET_ID",
+        "amount_total": 1000,
+        "amount_current": 1000,
+        "start_date": "2022-12-01",
+        "end_date": "2022-12-31",
+        "user": "users/<USER_ID>"
+      }
+    }
+  ]
+}

@@ -26,6 +26,10 @@ export default function ExpenseContent({ expense }) {
    */
   const createdAt = typeof expense?.createdAt === 'number' ? new Date(expense.createdAt) : expense.createdAt.toDate();
 
+
+  // TODO: Should access transaction and category for icon and hover tooltip
+  // | icon     | title     | amount | 
+  // |          |            | date |
   return (
     <div className="card">
       <h1>{expense?.title}</h1>

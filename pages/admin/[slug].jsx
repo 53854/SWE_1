@@ -23,14 +23,14 @@ function ExpenseManager() {
   const [preview, setPreview] = useState(false);
   const router = useRouter();
   const { slug } = router.query;
-
+  
   const expenseRef = firestore
-    .collection("users")
-    .doc(auth.currentUser.uid)
-    .collection("expenses")
-    .doc(slug);
+  .collection("users")
+  .doc(auth.currentUser.uid)
+  .collection("expenses")
+  .doc(slug);
   const [expense] = useDocumentData(expenseRef);
-
+  
   return (
     <main className={styles.container}>
       {expense && (
@@ -43,7 +43,7 @@ function ExpenseManager() {
               expenseRef={expenseRef}
               defaultValues={expense}
               preview={preview}
-            />
+              />
           </section>
 
           <aside>
@@ -62,6 +62,9 @@ function ExpenseManager() {
   );
 }
 
+
+// TODO: Editing an expense should be a rare occurence, rather than a neccisity
+// TODO: modify category or reccurnce flag
 function ExpenseForm({ defaultValues, expenseRef, preview }) {
   const { register, handleSubmit, reset, watch, formState, errors } = useForm({
     defaultValues,
