@@ -34,6 +34,7 @@ export async function getServerSideProps({ query }) {
     };
 }
 
+// TODO: This should be a component
 function SummaryChart({ expenses }) {
     let expenseValue = 0;
     let budget = 1500;

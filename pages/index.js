@@ -44,11 +44,15 @@ export default function Home(props) {
   );
 }
 
-
+// TODO: Remove new user flag from userdoc after setting new budget
+// TODO: Create corrosponding document in budgets collection
 function BudgetPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [rangeval, setRangeval] = useState(null);
 
+
+  // TODO: This should be associated with new user registration or adding / modifying a budget
+  // TODO: Suggestion to capsue this into a component
   return (
     <>
       <Popup

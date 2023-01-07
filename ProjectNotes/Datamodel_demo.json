@@ -16,15 +16,16 @@
   "Transactions": [
     {
       "TRANSACTION_ID": {
+        "name": "Edeka XY sagt Danke",
         "amount": 100.5,
         "id" : "12h3k21h3j12h31kj",
         "description": "Grocery shopping",
         "date": "2022-12-22T12:34:56.789Z",
-        "type": "expense",
+        "is_expense": true,
         "user": "users/<USER_ID>",
         "category": "categories/<CATEGORY_ID>",
         "budget": "budgets/<BUDGET_ID>",
-        "recurrence": "monthly",
+        "reocurring": true,
         "next_occurrence": "2022-01-22T12:34:56.789Z"
       }
     }

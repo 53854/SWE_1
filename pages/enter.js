@@ -105,6 +105,8 @@ function UsernameForm() {
     const usernameDoc = firestore.doc(`usernames/${formValue}`);
 
     // Commit both docs together as a batch write
+    // TODO: Require new users to add fixed income and expenses
+
     const batch = firestore.batch();
     batch.set(userDoc, {
       username: formValue,
@@ -116,16 +118,19 @@ function UsernameForm() {
       member_since: serverTimestamp(),
       photoURL: user.photoURL,
       displayName: user.displayName,
+      new_user: true,
     });
     batch.set(usernameDoc, { uid: user.uid });
 
     await batch.commit();
   };
 
+
+  // TODO: if a user with an asssocated but outdated budget signs in, copy said budget and adjust for the current month
   return (
     !username && (
       <section>
-        <h3>Choose Username</h3>
+        <h3>How should we call you?</h3>
         <form onSubmit={onSubmit}>
           <input
             name="username"
