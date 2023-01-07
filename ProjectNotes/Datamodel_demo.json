@@ -36,6 +36,7 @@
         "name": "Groceries",
         "id" : "12h3k21h3j12h31kj",
         "description": "Expenses related to grocery shopping",
+        "icon": "🛍️",
         "user": "users/<USER_ID>"
       }
     }

@@ -4,8 +4,7 @@ A summary of all important information, still required changes and other annotat
 
 ## **Notes**
 
-Notes for the presentation and the resulting report
-
+Notes for the presentation and the resulting report.
 ### Diagrams
 
 Please collect and validate all diagrams used during the presentation, amongst which should be some elaborating on the requirements / use case as well as the architecture of the application.
@@ -45,6 +44,8 @@ A write up for the architecture of the application should be added to the [Archi
 See above
 
 ## TODOs 
+
+**WE ARE MISSIGN A GDPR THINGYY**
 
 Here i would like to summarize TODOS in correspondence to our milestones and scrum board, as well as last minute fixed or direct feedback to the codebase / presentation
 

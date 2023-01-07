@@ -83,6 +83,7 @@ Categories are generally available for all users, unless the "users" array field
   "CATEGORY_ID": {
     "name": "Groceries",
     "id": "12h3k21h3j12h31kj",
+    "icon": "🛍️",
     "description": "Expenses related to grocery shopping",
     "users": ["users/<USER_ID>", "users/<USER_ID>"]
   }

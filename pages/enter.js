@@ -26,6 +26,8 @@ export default function Enter(props) {
 }
 
 // Sign-In
+// TODO: user info should be stored cold in props, and modified hot when needed.
+// TODO: WE HAVE NO GDPR THINGYY
 function SignInButton() {
   const signInWithGoogle = async () => {
     await auth.signInWithPopup(googleAuthProvider);
@@ -96,7 +98,7 @@ function UsernameForm() {
     }, 500),
     []
   );
-
+  
   const onSubmit = async (e) => {
     e.preventDefault();
 
