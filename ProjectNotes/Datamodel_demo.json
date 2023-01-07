@@ -1,0 +1,54 @@
+{
+  "Users": [
+    {
+      "USER_ID": {
+        "name": "John Smith",
+        "uid" : "12h3k21h3j12h31kj",
+        "email": "john@example.com",
+        "current_budget": "budgets/<BUDGET_ID>",
+        "balance": 1000.0,
+        "regular_income": 1000.0,
+        "regular_expense": 0.0,
+        "member_since": "2022-12-22T12:34:56.789Z"
+      }
+    }
+  ],
+  "Transactions": [
+    {
+      "TRANSACTION_ID": {
+        "amount": 100.5,
+        "id" : "12h3k21h3j12h31kj",
+        "description": "Grocery shopping",
+        "date": "2022-12-22T12:34:56.789Z",
+        "type": "expense",
+        "user": "users/<USER_ID>",
+        "category": "categories/<CATEGORY_ID>",
+        "budget": "budgets/<BUDGET_ID>",
+        "recurrence": "monthly",
+        "next_occurrence": "2022-01-22T12:34:56.789Z"
+      }
+    }
+  ],
+  "Categories": [
+    {
+      "CATEGORY_ID": {
+        "name": "Groceries",
+        "id" : "12h3k21h3j12h31kj",
+        "description": "Expenses related to grocery shopping",
+        "user": "users/<USER_ID>"
+      }
+    }
+  ],
+  "Budgets": [
+    {
+      "BUDGET_ID": {
+        "name": "Monthly budget",
+        "amount_total": 1000,
+        "amount_current": 1000,
+        "start_date": "2022-12-01",
+        "end_date": "2022-12-31",
+        "user": "users/<USER_ID>"
+      }
+    }
+  ]
+}

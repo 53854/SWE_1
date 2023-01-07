@@ -1,5 +1,5 @@
 import Loader from "../components/Loader";
-import { auth, firestore, googleAuthProvider } from "../lib/firebase";
+import { auth, firestore, googleAuthProvider, serverTimestamp } from "../lib/firebase";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { UserContext } from "../lib/context";
 import debounce from "lodash.debounce";
@@ -108,6 +108,12 @@ function UsernameForm() {
     const batch = firestore.batch();
     batch.set(userDoc, {
       username: formValue,
+      user_id: user.uid,
+      user_email: user.email,
+      balance: 0,
+      regular_income: 0,
+      regular_expense: 0,
+      member_since: serverTimestamp(),
       photoURL: user.photoURL,
       displayName: user.displayName,
     });
