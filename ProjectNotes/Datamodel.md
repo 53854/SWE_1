@@ -21,6 +21,7 @@ Income and expenses can
 
 As we're using Firebase, our database requires storing data in JSON Style, non-relational data scheme.
 
+
 ### Using collections
 
 In a non-relational database, we can use collections to store data in a more normalized way, but we have to be careful to not overuse this feature, as it will increase the amount of reads and writes to the database.
@@ -35,7 +36,7 @@ It includes, amongst other, the total sum of a user recurring income and fixed e
 {
   "USER_ID": {
     "name": "John Smith",
-    "uid": "12h3k21h3j12h31kj",
+    "id": "USER_ID",
     "email": "john@example.com",
     "current_budget": "budgets/<BUDGET_ID>",
     "balance": 1000.0,
@@ -52,7 +53,7 @@ Transactions are stored by a unique ID, which is also used as the key in the col
 Users access their transactions by referencing their user ID in the user collection.
 Similarly, the transaction is also reflected on the budget currently active by the user in order to keep track of the current amount of the budget.
 
-They can further be categorized by referring to the category ID in the category collection, which will then supply further information about the transaction. In the future maybe more than once category can be assigned to a transaction. 
+They can further be categorized by referring to the category ID in the category collection, which will then supply further information about the transaction. In the future maybe more than once category can be assigned to a transaction.
 
 Recurring transactions are stored in the same collection, but with a reference to the next occurrence of the transaction which is only set if the recurrence is set to true.
 
@@ -61,7 +62,7 @@ Recurring transactions are stored in the same collection, but with a reference t
   "TRANSACTION_ID": {
     "name": "Rewe Koslowsky 31231",
     "amount": 100.5,
-    "id": "12h3k21h3j12h31kj",
+    "id": "TRANSACTION_ID",
     "description": "Grocery shopping",
     "date": "2022-12-22T12:34:56.789Z",
     "is_expense": true,
@@ -82,7 +83,7 @@ Categories are generally available for all users, unless the "users" array field
 {
   "CATEGORY_ID": {
     "name": "Groceries",
-    "id": "12h3k21h3j12h31kj",
+    "id": "CATEGORY_ID",
     "icon": "🛍️",
     "description": "Expenses related to grocery shopping",
     "users": ["users/<USER_ID>", "users/<USER_ID>"]
@@ -96,6 +97,7 @@ Categories are generally available for all users, unless the "users" array field
 {
   "BUDGET_ID": {
     "name": "Monthly budget",
+    "id": "BUDGET_ID",
     "amount": 1000,
     "start_date": "2022-12-01",
     "end_date": "2022-12-31",

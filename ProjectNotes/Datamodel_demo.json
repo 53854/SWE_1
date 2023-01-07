@@ -3,7 +3,7 @@
     {
       "USER_ID": {
         "name": "John Smith",
-        "uid" : "12h3k21h3j12h31kj",
+        "id" : "USER_ID",
         "email": "john@example.com",
         "current_budget": "budgets/<BUDGET_ID>",
         "balance": 1000.0,
@@ -18,7 +18,7 @@
       "TRANSACTION_ID": {
         "name": "Edeka XY sagt Danke",
         "amount": 100.5,
-        "id" : "12h3k21h3j12h31kj",
+        "id" : "TRANSACTION_ID",
         "description": "Grocery shopping",
         "date": "2022-12-22T12:34:56.789Z",
         "is_expense": true,
@@ -34,7 +34,7 @@
     {
       "CATEGORY_ID": {
         "name": "Groceries",
-        "id" : "12h3k21h3j12h31kj",
+        "id" : "CATEGORY_ID",
         "description": "Expenses related to grocery shopping",
         "icon": "🛍️",
         "user": "users/<USER_ID>"
@@ -45,6 +45,7 @@
     {
       "BUDGET_ID": {
         "name": "Monthly budget",
+        "id" : "BUDGET_ID",
         "amount_total": 1000,
         "amount_current": 1000,
         "start_date": "2022-12-01",

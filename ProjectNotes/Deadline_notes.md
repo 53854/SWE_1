@@ -45,7 +45,10 @@ See above
 
 ## TODOs 
 
-**WE ARE MISSIGN A GDPR THINGYY**
+ - []**WE ARE MISSIGN A GDPR THINGYY**
+ - [] **Past budgets** We should add a feature to view past budgets, but currently i think we should just update the start and end date after passing the end date
+ - [] **Page files** almost all pages currently contain functionality which sould be within components, fixing this will also help us establish clear patterns and better code quality
 
-Here i would like to summarize TODOS in correspondence to our milestones and scrum board, as well as last minute fixed or direct feedback to the codebase / presentation
+ - [] Here i would like to summarize TODOS in correspondence to our milestones and scrum board, as well as last minute fixed or direct feedback to the codebase / presentation
+
 
