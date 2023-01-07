@@ -24,7 +24,7 @@ As we're using Firebase, our database requires storing data in JSON Style, non-r
 ### Using collections
 
 In a non-relational database, we can use collections to store data in a more normalized way, but we have to be careful to not overuse this feature, as it will increase the amount of reads and writes to the database.
-The following is a rough outline of how we use redundancy in separate collections in order to optimize for efficiency and therefore scale:
+The following is a rough outline of how we use redundancy in separate collections in order to optimize for efficiency and scale by avoiding sub-collections:
 
 #### **Users collection**
 
@@ -52,9 +52,9 @@ Transactions are stored by a unique ID, which is also used as the key in the col
 Users access their transactions by referencing their user ID in the user collection.
 Similarly, the transaction is also reflected on the budget currently active by the user in order to keep track of the current amount of the budget.
 
-They can further be categorized by referring to the category ID in the category collection, which will then supply further information about the transaction.
+They can further be categorized by referring to the category ID in the category collection, which will then supply further information about the transaction. In the future maybe more than once category can be assigned to a transaction. 
 
-Recurring transactions are stored in the same collection, but with a reference to the next occurrence of the transaction.
+Recurring transactions are stored in the same collection, but with a reference to the next occurrence of the transaction which is only set if the recurrence is set to true.
 
 ```json
 {
@@ -64,11 +64,11 @@ Recurring transactions are stored in the same collection, but with a reference t
     "id": "12h3k21h3j12h31kj",
     "description": "Grocery shopping",
     "date": "2022-12-22T12:34:56.789Z",
-    "type": "expense",
+    "is_expense": true,
     "user": "users/<USER_ID>",
     "category": "categories/<CATEGORY_ID>",
     "budget": "budgets/<BUDGET_ID>",
-    "recurrence": "monthly",
+    "recurrence": true,
     "next_occurrence": "2022-01-22T12:34:56.789Z"
   }
 }
@@ -76,13 +76,15 @@ Recurring transactions are stored in the same collection, but with a reference t
 
 #### **Categories collection**
 
+Categories are generally available for all users, unless the "users" array field is set / non-empty.
+
 ```json
 {
   "CATEGORY_ID": {
     "name": "Groceries",
     "id": "12h3k21h3j12h31kj",
     "description": "Expenses related to grocery shopping",
-    "user": "users/<USER_ID>"
+    "users": ["users/<USER_ID>", "users/<USER_ID>"]
   }
 }
 ```
