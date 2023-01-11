@@ -51,9 +51,9 @@ function SummaryChart({ expenses }) {
 
     return (
 
-        <PieChart class="piechart"
+        <PieChart className="piechart"
             data={[{ value: budgetLeft, color: 'rgba(185,56,217,0.7931547619047619)' }]}
-            segmentsStyle={'/styles/globals.css'}
+            //segmentsStyle={'/styles/globals.css'} // nimmt keinen Path sonder CSS Object
             viewBoxSize={[5, 2.5]}
             center={[2.5, 1.25]}
             background="#b5bdc4"
@@ -82,14 +82,14 @@ function SummaryChart({ expenses }) {
 export default function UserProfilePage({ user, expenses }) {
     return (
         <main>
-            <div class="flex-col">
+            <div className="flex-col">
             <div>
             <UserProfile user={user} />
             </div>
 
-            <div class="pt-14">
+            <div className="pt-14">
                 <SummaryChart expenses={expenses} />
-                <div class="text-center tracking-tight text-base pt-4 pb-10 font-thin">Budget left</div>
+                <div className="text-center tracking-tight text-base pt-4 pb-10 font-thin">Budget left</div>
             </div>
 
             <div>

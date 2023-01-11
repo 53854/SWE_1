@@ -21,10 +21,10 @@ export default function Navbar() {
 
 
 
-    <div class="block absolute inset-x-0 bottom-0 h-32 bg-gradient-to-bl from-[#1F1F1F] via-[#1F1F1F] to-[#b938d958]">
-      <ul class="flex flex-row justify-between static mt-6">
+    <div className="block absolute inset-x-0 bottom-0 h-32 bg-gradient-to-bl from-[#1F1F1F] via-[#1F1F1F] to-[#b938d958]">
+      <ul className="flex flex-row justify-between static mt-6">
       
-        <li class="flex px-12 py-1 ">
+        <li className="flex px-12 py-1 ">
           <Link href="/">
             <Image alt="" src="/home-2.png" width={90} height={90}/>
           </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
             </li>
         */}
 
-            <li class="flex py-1">
+            <li className="flex py-1">
               <Link href="/admin">
              {/* <span class="material-symbols-outlined">add_circle</span> */}
               <Image alt="" src="/add-6.png" width={90} height={90}/>
@@ -47,7 +47,7 @@ export default function Navbar() {
               
               </Link>
             </li>
-            <li class="flex px-12 py-1">
+            <li className="flex px-12 py-1">
               <Link href={`/${username}`}>
               <Image alt="" src="/application.png" width={90} height={90}/>
               </Link>

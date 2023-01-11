@@ -18,20 +18,20 @@ function ExpenseItem({ expense, admin = false }) {
 
     
     <div className="flex flex-row justify-start p-2 font-thin">
-      <div class="circle"></div>
-      <div class="">
+      <div className="circle"></div>
+      <div className="">
       <Link href={`/${expense.username}/${expense.slug}`}>
-        <h2 class="pt-1 text-base">
+        <h2 className="pt-1 text-base">
          <span>{expense.title}</span>
         </h2>
       </Link>
 
-      <div class="self-end text-sm text-neutral-300 pt-1"> Category </div>
+      <div className="self-end text-sm text-neutral-300 pt-1"> Category </div>
       </div>
 
-      <footer class="pt-1 text-base ml-auto">
-        <span class="ml-auto">{expense?.content}€</span>
-        <div class="text-xs text-neutral-300 pt-1 ml-auto">
+      <footer className="pt-1 text-base ml-auto">
+        <span className="ml-auto">{expense?.content}€</span>
+        <div className="text-xs text-neutral-300 pt-1 ml-auto">
         {createdAt.toLocaleDateString()}
         </div>
 

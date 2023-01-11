@@ -23,15 +23,15 @@ export default function Home(props) {
       <main>
         {username && ( // ich hab hydration noch nicht komplett durchblickt bzw. was die fehlermeldung von mir wollen
        
-          <div class="relative">
-           <Image alt="" class="mx-auto z-10 pt-10" src="/essential.png" width={90} height={90}/>
+          <div className="relative">
+           <Image alt="" className="mx-auto z-10 pt-10" src="/essential.png" width={90} height={90}/>
            
           <div className="circle2"></div>
           <div className="circle3"></div>
 
-           <div class="text-center z-10 text-xl font-thin pt-3 mr-2 tracking-tighter">€ 3.200</div>
-           <div class="text-xs z-10 text-center text-neutral-300 pt-1 ml-auto">Budget Limit for</div>
-           <div class="text-xs z-10 text-center leading-tight text-neutral-300 pt-1 ml-auto">Dec 2022</div>
+           <div className="text-center z-10 text-xl font-thin pt-3 mr-2 tracking-tighter">€ 3.200</div>
+           <div className="text-xs z-10 text-center text-neutral-300 pt-1 ml-auto">Budget Limit for</div>
+           <div className="text-xs z-10 text-center leading-tight text-neutral-300 pt-1 ml-auto">Dec 2022</div>
            <BudgetPopup/>
            </div>
 
@@ -67,7 +67,7 @@ function BudgetPopup() {
   return (
     <>
       <Popup
-            trigger={ <Image alt="" class="mx-auto pt-10 z-10" src="/add-6.png" width={60} height={60}/>
+            trigger={ <Image alt="" className="mx-auto pt-10 z-10" src="/add-6.png" width={60} height={60}/>
           }
         modal
         nested
@@ -81,23 +81,23 @@ function BudgetPopup() {
 
             <div className="content">
               {' '}
-              <Image alt="" class="saturate-0 hover-100 py-12 m-auto" onClick={() => setIsVisible(!isVisible)} style={{ display: !isVisible ? 'block' : 'none' }} src="/coin.png" width={90} height={90}/>
+              <Image alt="" className="saturate-0 hover-100 py-12 m-auto" onClick={() => setIsVisible(!isVisible)} style={{ display: !isVisible ? 'block' : 'none' }} src="/coin.png" width={90} height={90}/>
 
 
 
 
 
               <div style={{ display: isVisible ? 'block' : 'none' }}>
-              <Image alt="" class="pt-8 mx-auto" src="/coin.png" width={90} height={90}/>
-                <div class="text-center z-10  text-base font-thin mr-2 tracking-tighter">Savings</div>
-                <div class="text-center text-xs pt-1 pb-8">percentage of your budget </div>
+              <Image alt="" className="pt-8 mx-auto" src="/coin.png" width={90} height={90}/>
+                <div className="text-center z-10  text-base font-thin mr-2 tracking-tighter">Savings</div>
+                <div className="text-center text-xs pt-1 pb-8">percentage of your budget </div>
                 <form>
                   
                   <input id="budget-range" type="range" className="budget-range" min="0" max="100"
                     onChange={(event) => setRangeval(event.target.value)} />
-                  <strong class="mx-60 text-lg font-thin">{rangeval}%</strong>
-                  <button class ="mx-auto py-6 animate-pulse" type="submit">
-                    <Image alt="" class="" src="/checked.png" width={40} height={40}/>
+                  <strong className="mx-60 text-lg font-thin">{rangeval}%</strong>
+                  <button className ="mx-auto py-6 animate-pulse" type="submit">
+                    <Image alt="" className="" src="/checked.png" width={40} height={40}/>
 
                   </button>
             
