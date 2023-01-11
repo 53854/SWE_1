@@ -62,6 +62,7 @@ export default function Home(props) {
 
 function BudgetPopup() {
   const [isVisible, setIsVisible] = useState(false);
+  const [budgetVisible, setBudgetVisible] = useState(false);
   const [rangeval, setRangeval] = useState(null);
 
   return (
@@ -96,12 +97,13 @@ function BudgetPopup() {
                   <input id="budget-range" type="range" className="budget-range" min="0" max="100"
                     onChange={(event) => setRangeval(event.target.value)} />
                   <strong className="mx-60 text-lg font-thin">{rangeval}%</strong>
-                  <button className ="mx-auto py-6 animate-pulse" type="submit">
+                  
+                </form>
+                <button className ="mx-auto py-6 animate-pulse" onClick={() => { setBudgetVisible(!budgetVisible); close(); }}>
                     <Image alt="" className="" src="/checked.png" width={40} height={40}/>
 
-                  </button>
+                </button>
             
-                </form>
 
               </div>
             </div>
@@ -111,6 +113,12 @@ function BudgetPopup() {
           </div>
         )}
       </Popup>
+      
+      <div className="card" style={{ display: budgetVisible ? 'block' : 'none '}}> 
+            <label htmlFor="budget">Savings</label><br/>
+            <label htmlFor="budget">{3200 * (rangeval / 100)} / month</label><br/>
+            <meter id="budget" value="200" min="0" max="600"></meter><br/>
+        </div>
     </>
   );
 }
