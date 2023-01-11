@@ -68,7 +68,7 @@ function BudgetPopup() {
   return (
     <>
       <Popup
-            trigger={ <Image alt="" className="mx-auto pt-10 z-10" src="/add-6.png" width={60} height={60}/>
+            trigger={ <Image alt="" className="mx-auto pt-10 pb-8 z-10" src="/add-6.png" width={60} height={60}/>
           }
         modal
         nested
@@ -99,7 +99,7 @@ function BudgetPopup() {
                   <strong className="mx-60 text-lg font-thin">{rangeval}%</strong>
                   
                 </form>
-                <button className ="mx-auto py-6 animate-pulse" onClick={() => { setBudgetVisible(!budgetVisible); close(); }}>
+                <button className ="bg-[#1f1e1e] mx-auto py-6 animate-pulse" onClick={() => { setBudgetVisible(!budgetVisible); close(); }}>
                     <Image alt="" className="" src="/checked.png" width={40} height={40}/>
 
                 </button>
@@ -114,11 +114,13 @@ function BudgetPopup() {
         )}
       </Popup>
       
-      <div className="card" style={{ display: budgetVisible ? 'block' : 'none '}}> 
-            <label htmlFor="budget">Savings</label><br/>
-            <label htmlFor="budget">{3200 * (rangeval / 100)} / month</label><br/>
+      <div class="bg-[#1e1d1d] p-4 mt-4 m-4 border-2 rounded-xl border-[#8a458d]" style={{ display: budgetVisible ? 'block' : 'none '}}> 
+    
+      <div class="flex">  <label class="text-lg font-thin tracking-tight" htmlFor="budget">Savings</label><br/> </div>
+           <div> <label class="text-base font-thin tracking-tighter" htmlFor="budget">{3200 * (rangeval / 100)} € / month</label><br/> </div>
             <meter id="budget" value="200" min="0" max="600"></meter><br/>
         </div>
+        
     </>
   );
 }
