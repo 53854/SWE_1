@@ -21,7 +21,7 @@ Income and expenses can
 
 As we're using Firebase, our database requires storing data in JSON Style, non-relational data scheme.
 
-````mermaid
+```mermaid
 erDiagram
     USER ||--o{ TRANSACTION : has
     USER ||--|| BUDGET : activly_tracks
