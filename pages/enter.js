@@ -1,5 +1,5 @@
 import Loader from "../components/Loader";
-import { auth, firestore, googleAuthProvider } from "../lib/firebase";
+import { auth, firestore, googleAuthProvider, serverTimestamp } from "../lib/firebase";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { UserContext } from "../lib/context";
 import debounce from "lodash.debounce";
@@ -26,6 +26,8 @@ export default function Enter(props) {
 }
 
 // Sign-In
+// TODO: user info should be stored cold in props, and modified hot when needed.
+// TODO: WE HAVE NO GDPR THINGYY
 function SignInButton() {
   const signInWithGoogle = async () => {
     await auth.signInWithPopup(googleAuthProvider);
@@ -96,7 +98,7 @@ function UsernameForm() {
     }, 500),
     []
   );
-
+  
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -105,21 +107,32 @@ function UsernameForm() {
     const usernameDoc = firestore.doc(`usernames/${formValue}`);
 
     // Commit both docs together as a batch write
+    // TODO: Require new users to add fixed income and expenses
+
     const batch = firestore.batch();
     batch.set(userDoc, {
       username: formValue,
+      user_id: user.uid,
+      user_email: user.email,
+      balance: 0,
+      regular_income: 0,
+      regular_expense: 0,
+      member_since: serverTimestamp(),
       photoURL: user.photoURL,
       displayName: user.displayName,
+      new_user: true,
     });
     batch.set(usernameDoc, { uid: user.uid });
 
     await batch.commit();
   };
 
+
+  // TODO: if a user with an asssocated but outdated budget signs in, copy said budget and adjust for the current month
   return (
     !username && (
       <section>
-        <h3>Choose Username</h3>
+        <h3>How should we call you?</h3>
         <form onSubmit={onSubmit}>
           <input
             name="username"

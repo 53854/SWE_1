@@ -36,16 +36,21 @@ function ExpenseList() {
   );
 }
 
+// TODO: Either we have to rewrite a lrage part of this or clean this one up
+// TODO: New users should recieve a "frist budget screen" forcing them to enter at least one fixed expense and income
+// TODO: Non new users should auto link to their currently selected budget
+// TODO: if the recurring flag is ture, fixed income and expense should be adjusted
+// TODO: Fetch list of available catories -> categories with the "users" field being empty or containing the current user
 function CreateNewExpense() {
   const router = useRouter();
   const { username } = useContext(UserContext);
-  const [title, setTitle] = useState("");
+  const [name, setTitle] = useState("");
 
   // Ensure slug is URL safe
-  const slug = encodeURI(kebabCase(title));
+  const slug = encodeURI(kebabCase(name));
 
   // Validate length
-  const isValid = title.length > 3 && title.length < 100;
+  const isValid = name.length > 3 && name.length < 100;
 
   // Create a new post in firestore
   const createExpense = async (e) => {
@@ -59,7 +64,7 @@ function CreateNewExpense() {
 
     // Tip: give all fields a default value here
     const data = {
-      title,
+      title: name,
       slug,
       uid,
       username,
@@ -81,7 +86,7 @@ function CreateNewExpense() {
   return (
     <form onSubmit={createExpense}>
       <input
-        value={title}
+        value={name}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Type the purpose of your expense here"
         className={styles.input}
