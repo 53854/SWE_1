@@ -35,20 +35,46 @@ A write up for the architecture of the application should be added to the [Archi
 
 ### Test, CI and documentation
 
- - [] **OH FUCK WE FORGOT ABOUT DOCUMENTATION** I will take care of this asap (Seb)
- - [] **Test** We currenlty use vercel to deploy our application, and test every build and preview for successful builds and linting errors upon pushes to master
- - [] **CI** We currenlty use github actions to run our tests and call deploy to vercel (out hosting partner)
+ - [ ] **OH FUCK WE FORGOT ABOUT DOCUMENTATION** I will take care of this asap (Seb)
+ - [ ] **Test** We currenlty use vercel to deploy our application, and test every build and preview for successful builds and linting errors upon pushes to master
+ - [ ] **CI** We currenlty use github actions to run our tests and call deploy to vercel (out hosting partner)
 
 ### Automization
 
 See above
 
 ## TODOs 
+ - [ ] **WE ARE MISSIGN A GDPR THINGYY**
+ - [ ] **Past budgets** We should add a feature to view past budgets, but currently i think we should just update the start and end date after passing the end date
+ - [ ] **Page files** almost all pages currently contain functionality which sould be within components, fixing this will also help us establish clear patterns and better code quality
 
- - []**WE ARE MISSIGN A GDPR THINGYY**
- - [] **Past budgets** We should add a feature to view past budgets, but currently i think we should just update the start and end date after passing the end date
- - [] **Page files** almost all pages currently contain functionality which sould be within components, fixing this will also help us establish clear patterns and better code quality
-
- - [] Here i would like to summarize TODOS in correspondence to our milestones and scrum board, as well as last minute fixed or direct feedback to the codebase / presentation
+ - [ ] Here i would like to summarize TODOS in correspondence to our milestones and scrum board, as well as last minute fixed or direct feedback to the codebase / presentation
 
 
+## German bulletpoints for the presentation
+
+ - [ ] **Architekturmuster** Einige Beispiele verwendeter klassischer Architektur Muster (Seb)
+   - **MVC Pattern**
+   - Nuter Interface gerenderte "page" files sind kalr von der applikationslogik getrennt und werden durch die Controller verwaltet 
+   -  **Singleton Pattern** 
+   -  Nutzer authentifikation und Datenbank refferenz können immer nur als einzigartige Referenz existieren und werden in grenzfällen erstzt statt dupliziert.
+   -  **Factory Pattern**
+   -  Transaktionen werden nach einem Factory Pattern erstellt, wobei eine teilliste der Datenbank zusammen mit verschiendenen als Template dienenden Komponentnen einzele Elemente erstellt und rendert.
+   -  **DAO Pattern**
+   -  "recent" Transaktionen werden als Datenobject zwischengespeichert um erste Zugriffe schneller, teils offline und / order vor Datenbankverbindung zu ermöglichen
+   -  **Observer Pattern** 
+   -  Budgets werden als Observer registriert und werden bei neuen Transaktionen aktualisiert
+   -  **Command Pattern**
+   -  Änderungen an Transaktionen sowie Budgets folgen bekannten Kommandos, welche ausschließlich über die Datenbank abgespeichert werden und somit auch wiederherstellbar sind.
+ - [ ] **Datenmodell** (Seb)
+    - TODO: Mermaid graph und keynotes 
+ - [ ] **Test, CI & Automatisierung** (Seb)
+    - Besipiel graph für deployment und testing workflow 
+ - [ ] **Dokumentation** (Seb)
+     - API doku nur bedingt nützlich und wird durch md files und inline doku abgedeckt **!LEARNING: do not overcomplicate**
+ - [ ] **Tecnical Learnings**
+     - Hin und her mit DB scheme, hosting partner und automation workflow -> BDUF can be useful sometimes, think of scaleing early on
+     - Überkomplikation durch fokus auf "potentielle" Features und veralgemeinerung -> Fix the engine before painting your car
+     - Steep learning curves durch verwenden neuerer frameworks und instabiler libs -> When shipping: Use what you know, not what you want to learn 
+     - Zeitverlust durch zu spätes technisches refactoring -> Enforce code quality durch custom linting / besseres testing
+     - Nicht technische nutzer benötigen eignes onboarding / tooling -> nächstes mal Storyblocks verwenden
