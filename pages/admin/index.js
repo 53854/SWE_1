@@ -27,11 +27,7 @@ function ExpenseList() {
 
   return (
     <>
-      <h1>Manage your expenses</h1>
-      <h2>Monthly Expenses</h2>
-      <ExpenseFeed expenses={expensesMonthly} admin />
-      <h2>One-Time Expenses</h2>
-      <ExpenseFeed expenses={expensesOneTime} admin />
+   
     </>
   );
 }
@@ -82,7 +78,7 @@ function CreateNewExpense() {
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="Type the purpose of your expense here"
+        placeholder="purpose"
         className={styles.input}
       />
       <p>
